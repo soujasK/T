@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Sample T-Test</title>
+</head>
+
+<body>
+
+<h2>Two Sample T-Test Calculator</h2>
+
+<form method="post">
+
+<label>Sample 1 (comma separated)</label><br>
+<input type="text" name="sample1" size="50"><br><br>
+
+<label>Sample 2 (comma separated)</label><br>
+<input type="text" name="sample2" size="50"><br><br>
+
+<label>Alternative Hypothesis</label><br>
+
+<select name="alt">
+<option value="two-sided">Two Sided</option>
+<option value="left">Left</option>
+<option value="right">Right</option>
+</select>
+
+<br><br>
+
+<button type="submit">Run Test</button>
+
+</form>
+
+{% if result %}
+
+<h3>Results</h3>
+
+<p>T Calculated: {{result.tcal}}</p>
+<p>P Value: {{result.pvalue}}</p>
+<p>T Table Positive: {{result.t_table_pos}}</p>
+<p>T Table Negative: {{result.t_table_neg}}</p>
+<p>Scipy Result: {{result.scipy}}</p>
+
+{% endif %}
+
+</body>
+</html>
